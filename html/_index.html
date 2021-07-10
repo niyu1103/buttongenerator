@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Generator</title>
+  <meta name="description" content="htmlタグのみで作るボタンジェネレーター" />
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/js/color/spectrum.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <hesder>
+    <div class="header_block">
+      <div class="sub_titile">\ HTMLタグのみで作成！アメブロ等の記事に使えます！ /</div>
+      <h1 class="site_title">-Button Generator-</h1>
+    </div>
+  </hesder>
+  <main>
+    <div class="container">
+      <div class="main_block">
+        <section class="main_contents">
+          <p class="site_mes">このサイトでは、ブログ等で使えるボタンを簡単に作成することができます。</p>
+          <p class="site_mes_sorry sp_only">I'm so sorry...</p>
+          <p class="site_mes sp_only">このサイトはPCで使用ください。スマホには未対応です。</p>
+          <div class="how_to_use_block">
+            <h2 class="title"><span class="title_num">1.</span><span class="title_en">how to use/</span> 使い方</h2>
+            <div class="bg_white_box">
+              <ul>
+                <li class="how_to_use_list img_btn">
+                  <div>各項目を入力・選択します。必須項目を忘れずに。数値は整数での入力をお願いします。『CREARE』ボタンを押します。</div>
+                  <img src="./assets/image/img_bun.png" alt="">
+                </li>
+                <li class="how_to_use_list img_pc">
+                  <div>できたボタンをプレビューにて確認。テキスト文字が途中で切れてしまっている場合は、テキストの長さに対して、幅が足りていない可能性があります。再度調整してみてください。</div>
+                  <img src="./assets/image/check.png" alt="">
+                </li>
+                <li class="how_to_use_list img_pc">
+                  <div>完成したら、コードのHTMLをコピーしてブログに貼り付けます。アメブロの場合、「通常表示」ではなく「HTML表示」に貼り付けます。</div>
+                  <img src="./assets/image/html.png" alt="">
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="select_block">
+            <h2 class="title"><span class="title_num">2.</span><span class="title_en">select /</span> 選択</h2>
+            <div class="bg_white_box_select">
+              <form method="post" class="valid_form">
+                <div class="select_box_wrap">
+                  <div class="select_box">
+                    <div class="select_text">
+                      <h3>テキスト内容<span class="required">＊必須</span></h3><span class="help-block"></span>
+                      <input type="text" name="text_mes" class="valid_text_mes" placeholder="20文字以内でお願いします">
+                    </div>
+                    <div class="select_under">
+                      <h3>ボタンサイズ<span class="required">＊必須</span></h3>
+                      <div class="select_line_box">
+                        <label class="check_box">横
+                          <input type="tel" name="size_wide" value="200" class="valid_size_width">px<span class="comment">（〜400）</span><span class="help-block"></span>
+                        </label>
+                        <label class="check_box">縦
+                          <input type="text" name="size_height" value="30" class="valid_size_heigh">px<span class="comment">（〜150）</span><span class="help-block"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select_box">
+                    <h3>線<span class="required">＊枠線を設定するには太さに数値を入力してください。</span></h3><span class="help-block"></span>
+                    <div class="select_line_box">
+                      <div class="line_type_select">
+                        <select name="select_line_position">
+                          <option value="inner" selected>外枠</option>
+                          <option value="out">内枠</option>
+                        </select>
+                      </div>
+                      <div class="line_type_select">
+                        <select name="select_line_type">
+                          <option value="solid" selected>直線</option>
+                          <option value="dashed">点線</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>色
+                          <input type="text" name="line_out_color" id="line_out_color_num" value="#777"><input type="text" class="picker1">
+                          <div id="color"></div>
+                        </label>
+                        <label class="check_box">太さ
+                          <input type="text" name="line_inner_color" class="valid_line_wide">px<span class="comment">（〜10）</span><span class="help-block"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select_box">
+                    <h3>背景色・影</h3><span class="help-block"></span>
+                    <div class="select_line_box">
+                      <label>色 <input type="text" name="background_color" id="background_color_num" value="#777"><input type="text" class="picker2"></label>
+                      <label class="check_box">影
+                        <input type="text" name="shadow" class="valid_shadow">px<span class="comment">（〜10）</span><span class="help-block"></span>
+                      </label class="check_box">
+                      <label class="check_box">角丸
+                        <input type="text" name="round_corner" class="valid_round_corner">px<span class="comment">（〜50）</span><span class="help-block"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="select_box">
+                    <h3>文字<span class="required">＊必須</span></h3><span class="help-block"></span>
+                    <div class="select_line_box">
+                      <label>色
+                        <input type="text" name="text_color" id="text_color_num" value="#777"><input type="text" class="picker3">
+                      </label>
+                      <label class="check_box">サイズ
+                        <input type="text" name="round_corner" class="valid_font_size">px<span class="comment">（〜100）</span><span class="help-block"></span>
+                      </label>
+                      <label class="checkbox"><input type="checkbox" name="line_blod" value="bold">太字</label>
+                      <div class="font_positin">
+                        <h4>配置</h4>
+                        <div class="font_positin_radio_box">
+                          <label class="radio"><input type="radio" name="font_positin" value="right">右</label>
+                          <label class="radio"><input type="radio" name="font_positin" value="center" checked>中央</label>
+                          <label class="radio"><input type="radio" name="font_positin" value="left">右</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="select_link_block check_box">
+                  <h3>リンク先<span class="required">＊必須　『http://〜』もしくは『https://〜』から始まる形式で入力してください。</span></h3><span class="help-block"></span>
+                  <div class="select_line_box">
+                    <label class="select_line_url">リンク先URL：
+                      <input type="text" name="link_url" class="valid_link_url" placeholder="例）https://niyutadesign.com/weblog/">
+                    </label>
+                    <label class="checkbox ta_blank"><input type="checkbox" value="ta_blank">別ウィンドウで開く</label>
+                  </div>
+                </div>
+                <!-- <div class="select_ico_block">
+                  <h3>アイコン</h3>
+                  <div class="">
+                    <div class="select_ico_position select_line_box">
+                      <h4>アイコン位置：</h4>
+                      <label class="position_before radio">先頭
+                        <input type="radio" name="ico_position" value="before">
+                      </label>
+                      <label class="position_after radio">末尾
+                        <input type="radio" name="ico_position" value="after">
+                      </label>
+                    </div>
+                    <div class="ico_item_box">
+                      <label class="checkbox">
+                        <input type="checkbox" value="blank">
+                        <p>なし</p>
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="fuki1">
+                        <img src="./assets/image/ico_fuki1.png" alt="">
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="fuki2">
+                        <img src="./assets/image/ico_fuki2.png" alt="">
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="letter1">
+                        <img src="./assets/image/ico_letter1.png" alt="">
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="letter2">
+                        <img src="./assets/image/ico_letter2.png" alt="">
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="home1">
+                        <img src="./assets/image/ico_home1.png" alt="">
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="home2">
+                        <img src="./assets/image/ico_home2.png" alt="">
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="arrow1">
+                        <img src="./assets/image/ico_arrow_next.png" alt="">
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="arrow2">
+                        <img src="./assets/image/ico_arrow_prev.png" alt="">
+                      </label>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="btn_wrap">
+                  <input type="submit" onclick="error_check()" name="submit" value="create" class="submit_btn">
+                </div>
+                <span class="help-block_submit"></span>
+              </form>
+            </div>
+          </div>
+          <div class="check_area_block">
+            <div class="check_area_box">
+              <h2 class="title"><span class="title_num">3.</span><span class="title_en">preview/</span> 確認</h2>
+              <div class="bg_white_box">
+                <div></div>
+              </div>
+            </div>
+            <div class="check_area_box">
+              <h2 class="title"><span class="title_num">4.</span><span class="title_en">html code/</span> コード </h2>
+              <div class="bg_white_box">
+                <div></div>
+              </div>
+            </div>
+          </div>
+          <div class="samle_block">
+            <h2 class="title"><span class="title_num">5.</span><span class="title_en">sample/</span> サンプル</h2>
+            <p class="sample_mes">個人的にオシャレだなと思ったカラーで作成してみました。CODE内の「リンク先URL」をご自分のリンク先へ書き換えてご使用ください。</p>
+            <div class="bg_white_box">
+              <ul>
+                <li>
+                  <a class="sample_btn_01 sample_btn" href="#">申し込みはこちら＞</a>
+                  <textarea readonly><a href="リンク先URL"  target="_blank" style="color: #fff; display: block; font-size: 18px; line-height: 30px; text-align: center; width: 200px; background-color: #fcb; border: 2px dashed #fff; box-shadow: 0 0 0 5px #fcb;">申し込みはこちら＞</a></textarea>
+                </li>
+                <li>
+                  <a class="sample_btn_02 sample_btn" href="#">申し込みはこちら＞＞</a>
+                  <textarea readonly><a href="リンク先URL"  target="_blank" style="color: #fff; display: block; font-size: 18px; line-height: 30px; text-align: center; width: 200px; background-color: #919636; border: 2px dashed #fff; box-shadow: 0 0 0 5px #919636;">申し込みはこちら>＞</a></textarea>
+                </li>
+                <li>
+                  <a class="sample_btn_03 sample_btn" href="#">申し込みはこちら＞</a>
+                  <textarea readonly><a href="リンク先URL"  target="_blank" style="color: #fff; display: block; font-size: 18px; line-height: 30px; text-align: center; width: 200px; background-color: #97b8c2; border: 2px solid #fff; box-shadow: 0 0 0 5px #97b8c2; font-weight: bold;">申し込みはこちら>＞</a></textarea>
+                </li>
+                <li>
+                  <a class="sample_btn_04 sample_btn" href="#">申し込みはこちら＞＞</a>
+                  <textarea readonly><a href="リンク先URL"  target="_blank" style="color: #fff; display: block; font-size: 18px; line-height: 30px; text-align: center; width: 200px; background-color: #fff; border: 1px solid #f9ba32; border-radius: 25px; color: #f9ba32;">申し込みはこちら>＞</a></textarea>
+                </li>
+                <li>
+                  <a class="sample_btn_05 sample_btn" href="#">申し込みはこちら＞</a>
+                  <textarea readonly><a href="リンク先URL"  target="_blank" style="color: #fff; display: block; font-size: 18px; line-height: 30px; text-align: center; width: 200px; background-color: #fff; border: 5px solid #ffa577; border-radius: 25px; color: #ffa577;">申し込みはこちら>＞</a></textarea>
+                </li>
+                <li>
+                  <a class="sample_btn_06 sample_btn" href="#">申し込みはこちら＞＞</a>
+                  <textarea readonly><a href="リンク先URL"  target="_blank" style="color: #fff; display: block; font-size: 18px; line-height: 30px; text-align: center; width: 200px; background-color: #727077; border: 1px dashed #f8f1e5; border-radius: 25px; box-shadow: 0 0 0 5px #727077; color: #f8f1e5;">申し込みはこちら>＞</a></textarea>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="side_contents">
+          <div>
+            <div class="contact_block">
+              <h2>\ sns share /</h2>
+              <div class="sns_box">
+                <ul>
+                  <li><a href="#"><i class="fab fa-twitter fa-fw sns_twitter"><span>twitter</span></i></a></li>
+                  <li><a href="#"><i class="fab fa-facebook-f fa-fw sns_facebook"><span>facebook</span></span></i></a></li>
+                </ul>
+              </div>
+              <h2 class="contact_title">contact me</h2>
+              <div class="contact_box">
+                <a href="#"><i class="far fa-envelope font_contact"><span>お問い合わせ</span></i></a>
+              </div>
+            </div>
+            <div class="recent_posts_block">
+              <h2>recent posts</h2>
+              <ul>
+                <li>
+                  <p>Button Generator リリースしました。アメブロ等、投稿記事にCSS編集できないようなブログなどで活躍してくれると思います。</p>
+                  <div class="recent_posts_date">September 01, 2019</div>
+                </li>
+                <li>
+                  <p>Button Generator リリースしました。アメブロ等、投稿記事にCSS編集できないようなブログなどで活躍してくれると思います。</p>
+                  <div class="recent_posts_date">September 01, 2019</div>
+                </li>
+              </ul>
+            </div>
+            <div class="my_info_block">
+              <ul>
+                <li class="info_home"><a href="#"><i class="fas fa-home fa-fw font_home"></i></a></li>
+                <li class="info_twitter"><a href="#"><i class="fab fa-twitter fa-fw font-info_twitter"></i></a></li>
+              </ul>
+              <p class="copyright"><small>&copy;2019 Button Generator</small></p>
+            </div>
+          </div>
+        </section>
+  </main>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="./assets/js/common.js"></script>
+  <script type="text/javascript" src="./assets/js/color/spectrum.js"></script>
+</body>
+
+</html>
